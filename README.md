@@ -62,8 +62,7 @@ Commands["example"] = { -- command name (it will execute using this name)
 
 ## Modules  
 ### Available Modules  
-1. **pn receiver**  
-   > Integrates a receiver system designed to intercept and process calls and radio frequencies efficiently.
+- pn-receiver *(included in the package)*
 
 ❓ Are you a **developer** and you want to put your script here? Just join our Discord server and notice us.
 
