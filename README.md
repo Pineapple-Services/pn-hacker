@@ -101,6 +101,8 @@ print(input) -- prints what u texted in the console input, does not count comman
 ```
 
 ### Modules
+You can [click here](https://github.com/Pineapple-Services/pn-module-example) for a module resource base.
+
 ```lua
 local isInModule = false
 
