@@ -12,7 +12,7 @@ This guide provides instructions on how to customize **pn-hacker**.
 - [lb-phone](https://lbscripts.com/) or [qb-phone](https://github.com/qbcore-framework/qb-phone) _(to check if your phone could be integrated open a ticket on our discord)_
 ---
 ## Commands
-### How to create commands?
+### ❓ How to create commands?
 1. Go to `pn-hacker/client/commands`
 2. Create a lua file `{command name}.lua`
 3. Now, you can follow the base given on `example.lua` *for custom commands / modules open a ticket on our discord*
