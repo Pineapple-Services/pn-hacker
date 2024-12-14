@@ -6,6 +6,7 @@ This guide provides instructions on how to customize **pn-hacker**.
 ## Table of Contents
 1. [Dependencies](#dependencies)
 2. [Commands](#commands)
+3. [Modules](#modules)
 
 ---
 
@@ -66,3 +67,60 @@ Commands["example"] = { -- command name (it will execute using this name)
 
 ❓ Are you a **developer** and you want to put your script here? Just join our Discord server and notice us.
 
+
+### How to create a module?
+1. You can follow our base by clicking right here
+
+---
+
+## API
+You can use this **API** to develop [Commands](#commands) and [Modules](#modules), but also for a general knowledge to edit the script in case you bought open source.
+
+### Get API Object
+```lua
+local API = exports["pn-hacker"]:API()
+```
+
+### Utils
+```lua
+local input = "hello world" -- example input string
+local args = API.Utils.ParseArgs(input) -- divides input in args (example in pn-module-example)
+print(args[1]) -- Output: "hello"
+print(args[2]) -- Output: "world"
+
+local gotItem = API.Utils.HasItem("bread") -- checks if it got "bread" in tablet's storage.
+```
+
+### UI
+```lua
+API.UI.ClearConsole() -- clears the entire console
+API.UI.SendMessage("Hello World!") -- sends "Hello World!" to the player's console.
+
+local input = API.UI.GetInputFromConsole() -- gets input from console
+print(input) -- prints what u texted in the console input, does not count commands obviously.
+```
+
+### Modules
+```lua
+local isInModule = false
+
+API.Modules.create({
+    name = "example_module_name",
+    action = function()
+        isInModule = true
+        while isInModule do
+            local input = API.UI.GetInputFromConsole()
+            local args = API.Utils.ParseArgs(input)
+
+            if args[1] == "exit" then
+                isInModule = false
+            else
+                API.UI.SendMessage("Invalid module command.")
+            end
+        end
+    end,
+    canUse = function()
+        return API.Utils.HasItem("example_module_item") -- in this case im checking if it got an item in the storage, but you can check whatever u want
+    end,
+})
+```
