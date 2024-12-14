@@ -68,9 +68,9 @@ Commands["example"] = { -- command name (it will execute using this name)
 
 ❓ Are you a **developer** and you want to put your script here? Just join our Discord server and notice us.
 
-
-### How to create a module?
-1. You can follow our base by clicking right here
+### How to create a custom module?
+1. Download our module base by [clicking here](https://github.com/Pineapple-Services/pn-module-example)
+2. Use our [API Reference](#api) to check how to use our functions.
 
 ---
 
