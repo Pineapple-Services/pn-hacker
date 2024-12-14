@@ -7,6 +7,7 @@ This guide provides instructions on how to customize **pn-hacker**.
 1. [Dependencies](#dependencies)
 2. [Commands](#commands)
 3. [Modules](#modules)
+4. [API](#api)
 
 ---
 
