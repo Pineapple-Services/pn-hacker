@@ -17,3 +17,35 @@ This guide provides instructions on how to customize **pn-hacker**.
 2. Create a lua file `{command name}.lua`
 3. Now, you can follow the base given on `example.lua` *for custom commands / modules open a ticket on our discord*
 4. Develop your custom command!
+
+**Example Command:**
+```lua
+Commands["example"] = {
+    description = "Delete 'client/commands/example.lua' to remove me :O",
+    usage = "example <echo|getinput|hasitem>",
+    onUse = function(args, handle)
+        if #args <= 0 then
+            API.UI.SendMessage(("Usage: %s"):format(Commands["example"].usage))
+            return
+        end
+
+        local action = args[1]
+
+        if action == "echo" then
+            local messageToEcho = args[2] or "No message provided."
+            API.UI.SendMessage(("Echoed message: %s"):format(messageToEcho))
+        elseif action == "getinput" then
+            local input = API.UI.GetInputFromConsole()
+            API.UI.SendMessage(("Player said %s\nOhh.. forgot to tell you..\n\nI'll clear the console in 2.7 seconds!"):format(input))
+            Wait(2700)
+            API.UI.ClearConsole()
+        elseif action == "hasitem" then
+            local hasBread = API.Utils.HasItem("bread")
+            local message = hasBread and "Why the fuck do you have a bread in your computer storage?" or "Oh thank god, you're normal!"
+            API.UI.SendMessage(message)
+        else
+            API.UI.SendMessage("Invalid action. Use 'echo', 'getinput' or 'hasitem.")
+        end
+    end
+}
+```
