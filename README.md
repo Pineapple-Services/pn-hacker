@@ -62,5 +62,5 @@ Commands["example"] = { -- command name (it will execute using this name)
 
 ## Modules
 ### Available Modules
-- pn-receiver
+1. **pn-receiver**
 > Adds a "receiver" system to intercept call and radio frequency through a receiver.
