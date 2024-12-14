@@ -1,16 +1,22 @@
 # 🎚 pn-hud Documentation
 This guide provides instructions on how to customize **pn-hacker**.
+
 ---
+
 ## Table of Contents
 1. [Dependencies](#dependencies)
 2. [Commands](#commands)
+
 ---
+
 ## Dependencies
 - [ox_lib](https://github.com/overextended/ox_lib)
 - [ox_inventory](https://github.com/overextended/ox_inventory)
 - [pma-voice](https://github.com/AvarianKnight/pma-voice) or [saltychat](https://github.com/v10networkscom/saltychat-fivem/)
 - [lb-phone](https://lbscripts.com/) or [qb-phone](https://github.com/qbcore-framework/qb-phone) _(to check if your phone could be integrated open a ticket on our discord)_
+
 ---
+
 ## Commands
 ### ❓ How to create commands?
 1. Go to `pn-hacker/client/commands`
@@ -20,10 +26,13 @@ This guide provides instructions on how to customize **pn-hacker**.
 
 **Example Command:**
 ```lua
-Commands["example"] = {
-    description = "Delete 'client/commands/example.lua' to remove me :O",
-    usage = "example <echo|getinput|hasitem>",
-    onUse = function(args, handle)
+Commands["example"] = { -- command name (it will execute using this name)
+    description = "Delete 'client/commands/example.lua' to remove me :O", -- command description
+    usage = "example <echo|getinput|hasitem>", -- command usage
+    canUse = function()
+        return true -- check if player can use command (do ur own checks)
+    end,
+    onUse = function(args, handle) -- what will happen when the player executes the command?
         if #args <= 0 then
             API.UI.SendMessage(("Usage: %s"):format(Commands["example"].usage))
             return
@@ -49,3 +58,9 @@ Commands["example"] = {
     end
 }
 ```
+---
+
+## Modules
+### Available Modules
+- pn-receiver
+> Adds a "receiver" system to intercept call and radio frequency through a receiver.
