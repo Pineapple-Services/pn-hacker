@@ -1,4 +1,4 @@
-# 🎚 pn-hud Documentation
+# 🎚 pn-hacker Documentation
 This guide provides instructions on how to customize **pn-hacker**.
 
 ---
